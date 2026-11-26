@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NestEgg — a household budget planner that runs entirely in your browser. Track income and spending, set monthly budgets per category, and see where the money goes.">
+  <title>NestEgg — Household Budget Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#/dashboard">
+        <span class="brand-mark" aria-hidden="true">&#9679;</span>
+        <span class="brand-name">NestEgg</span>
+        <span class="brand-sub">household budget planner</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link" data-page="dashboard" href="#/dashboard">Dashboard</a>
+        <a class="nav-link" data-page="transactions" href="#/transactions">Transactions</a>
+        <a class="nav-link" data-page="budgets" href="#/budgets">Budgets</a>
+        <a class="nav-link" data-page="insights" href="#/insights">Insights</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="seed-note" class="notice" hidden>
+      Welcome! This is a sample household — Maya and Leo's November — so you can see
+      everything working. Add your own entries, or use <strong>Clear all</strong> below
+      to start from an empty month.
+    </p>
+    <div id="view" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p><strong>NestEgg</strong> keeps a household budget: income and spending, monthly
+      limits per category, and a clear picture of what is left. Your data never leaves
+      this browser — it is stored in localStorage on your own device, and the site makes
+      no network requests at all.</p>
+      <div class="data-tools" role="group" aria-label="Your data">
+        <button class="btn" id="sample-btn" type="button">Load sample household</button>
+        <button class="btn" id="export-btn" type="button">Export JSON</button>
+        <button class="btn" id="import-btn" type="button">Import JSON</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+        <button class="btn danger-outline" id="clear-btn" type="button">Clear all</button>
+      </div>
+      <p class="fine">Made for the make.fun best household budget site bounty. No accounts, no tracking, no network.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
